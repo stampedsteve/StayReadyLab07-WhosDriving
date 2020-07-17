@@ -2,8 +2,9 @@ package Vehicles;
 
 import Driving.Bike;
 
-public class MountainBike extends Bike {
+public class Ducati extends Bike {
     int PSI = 30;
+    int oldAge = 3;
     /**
      * The top speed of a mountain bike should be 28.5
      * but for every 1 PSI under the recommended tire
@@ -11,10 +12,11 @@ public class MountainBike extends Bike {
      * speed should be reduced 1mph.
      *
      * @return 28.5 minus any reduction to top speed
+     * Ducati loses 5mph off it's top speed per year owned
      */
     //@Override
     public Double getTopSpeed() {
-        int penalty = 30 - getTirePressure();
+        int penalty = 30 - getTirePressure() - oldAge*5;
         return 28.5 - penalty;
     }
 

@@ -1,4 +1,6 @@
 import Driving.Drivable;
+import Vehicles.HondaCivic;
+import Vehicles.MountainBike;
 
 import java.util.Scanner;
 
@@ -44,6 +46,15 @@ public class App {
      */
     public static Drivable getVehicle(Console c) {
         String input = c.getInput();
+        Drivable vehicle;
+        if(input.equalsIgnoreCase("honda civic")){
+            vehicle = new HondaCivic();
+            return vehicle;
+        }
+        if(input.equalsIgnoreCase("mountain bike")){
+            vehicle = new MountainBike();
+            return vehicle;
+        }
         return null;
     }
 
@@ -56,6 +67,8 @@ public class App {
      */
     public static Double getDistance(Console c) {
         String input = c.getInput();
-        return null;
+        Double iinput = Double.parseDouble(input);
+        Double dinput = iinput + 0.0;
+        return dinput;
     }
 }

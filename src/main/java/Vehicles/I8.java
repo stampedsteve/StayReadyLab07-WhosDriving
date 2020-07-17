@@ -2,14 +2,12 @@ package Vehicles;
 
 import Driving.Car;
 
-public class HondaCivic extends Car {
+public class I8 extends Car {
     int distance = 0;
     int ndistance = 0;
+    int value = 150000;
     /**
-     * A civic should need an oil change every
-     * 50,000 miles traveled. Once the oil is
-     * changed, the car may travel another 50,000
-     * miles before needing another oil change.
+     * A I8 loses $20,000 of value per 5k miles
      *
      * @return true if an oil change is needed
      */
@@ -68,6 +66,10 @@ public class HondaCivic extends Car {
     
     public Double getTopSpeed() {
         return 70.0;
+    }
+
+    public Double getValue(){
+        return value - ((getDistanceTraveled()/5000) * 20000);
     }
 
     /**
